@@ -4,8 +4,8 @@
 #include "ESP8266.h"
 #include <SoftwareSerial.h>
 
-#define SSID        "SK_WiFiGIGAE688"
-#define PASSWORD    "1702013543"
+#define SSID        "GC_free_WiFi"
+#define PASSWORD    ""
 
 SoftwareSerial mySerial(3, 2); /* RX:D11, TX:D10 */
 ESP8266 wifi(mySerial);
@@ -115,7 +115,7 @@ void loop(void)
       case 'r':
       case 'R':
 
-        if (val1 == HIGH)
+        if (val2 == HIGH)
         {
           sprintf(buffer, "t1on\n");
           wifi.send(mux_id, buffer, strlen(buffer));
@@ -128,7 +128,7 @@ void loop(void)
 
         delay(200);
 
-        if (val2 == HIGH)
+        if (val1 == HIGH)
         {
           sprintf(buffer, "t2on\n");
           wifi.send(mux_id, buffer, strlen(buffer));
